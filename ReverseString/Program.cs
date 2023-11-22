@@ -3,12 +3,14 @@
     static void Main()
     {
         bool exitApp = false;
+        string originalString = "";
+        string changedString = "";
 
-        Console.Write("Type in something: ");
-        string originalString = Console.ReadLine()!;
-        string reversedString = "";
-        string upperCaseString = "";
-        string lowerCaseString = "";
+        while (originalString == "")
+        {
+            Console.Write("Type in something: ");
+            originalString = Console.ReadLine()!;
+        }
 
         do
         {
@@ -20,22 +22,22 @@
                 switch (choice)
                 {
                     case "1":
-                        reversedString = ReverseString(originalString);
-                        Console.WriteLine("The text in reverse: " + reversedString);
+                        changedString = ReverseString(originalString);
+                        Console.WriteLine("The text in reverse: " + changedString);
                         break;
                     case "2":
-                        upperCaseString = ChangeCase(originalString);
-                        Console.WriteLine("The upper case text: " + upperCaseString);
+                        changedString = ChangeCase(originalString);
+                        Console.WriteLine("The upper case text: " + changedString);
                         break;
                     case "3":
-                        lowerCaseString = ChangeCase(originalString, false);
-                        Console.WriteLine("The lower case text: " + lowerCaseString);
+                        changedString = ChangeCase(originalString, false);
+                        Console.WriteLine("The lower case text: " + changedString);
                         break;
                     case "4":
                         exitApp = true;
                         break;
                     default:
-                        Console.WriteLine("Something went wring!");
+                        Console.WriteLine("Please select a valid choice (1 - 4)");
                         break;
                 }
             }
